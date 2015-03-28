@@ -5,20 +5,20 @@ var bubbleSort = function(array) {
     this[b] = temp;
   };
 
-  array.swapped = true;
+  array.sorted = false;
 
   var bubble = function() {
-    array.swapped = false;
+    array.sorted = true;
     for(var i = 0; i < array.length; i++) {
       if(array[i+1] && (array[i] > array[i+1])) {
         array.swap(i, i+1);
-        array.swapped = true;
+        array.sorted = false;
       }
     }
     return array;
   };
 
-  while(array.swapped) {
+  while(!array.sorted) {
     bubble(array);
   }
   
