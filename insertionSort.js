@@ -4,8 +4,7 @@ var insertionSort = function(array) {
     idx = i; 
     current = array[i];
     while(idx && current < array[idx-1]) {
-      array[idx] = array[idx-1];
-      idx--;
+      array[idx] = array[--idx];
     }
     array[idx] = current;
   }
